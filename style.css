@@ -1,0 +1,2217 @@
+/* --- Core Brand Styles & Variable Definitions --- */
+:root {
+    --primary-deep: #0A192F;      /* Emirates NBD Style Premium Dark Navy */
+    --accent-blue: #005B9E;       /* Professional Corporate Blue */
+    --light-bg: #F4F7FA;          /* Clear Layout Gray-White */
+    --text-main: #2C3E50;
+    --text-light: #607D8B;
+    --white: #FFFFFF;
+    --border-color: #E2E8F0;
+    --max-width: 1200px;
+    --font-stack: 'Poppins', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-stack); color: var(--text-main); background-color: var(--white); line-height: 1.6; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+
+/* --- Top Utility Strip --- */
+.top-utility-bar { background-color: var(--primary-deep); border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px; }
+.utility-flex { display: flex; justify-content: space-between; align-items: center; height: 40px; }
+.segment-switches { display: flex; height: 100%; }
+.segment { color: rgba(255, 255, 255, 0.7); text-decoration: none; display: flex; align-items: center; padding: 0 16px; border-right: 1px solid rgba(255, 255, 255, 0.1); transition: var(--transition); }
+.segment:hover, .segment.active { background-color: rgba(255, 255, 255, 0.05); color: var(--white); }
+.utility-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-left: 20px; }
+
+/* --- Navigation Header --- */
+.main-header { background-color: var(--white); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); position: sticky; top: 0; z-index: 1000; }
+.header-flex { display: flex; justify-content: center; align-items: center; height: 80px; position: relative; }
+.brand-logo { position: absolute; left: 24px; font-weight: 700; font-size: 22px; color: var(--primary-deep); text-decoration: none; letter-spacing: -0.5px; display: flex; flex-direction: row; align-items: center; gap: 16px; line-height: 1; }
+.brand-logo span { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); margin-top: 2px; }
+.logo-img { height: 60px; width: auto; }
+.logo-text { display: flex; flex-direction: column; }
+.tagline { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); margin-top: 2px; }
+.nav-menu { display: flex; align-items: center; gap: 32px; }
+.nav-link { color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 15px; transition: var(--transition); }
+.nav-link:hover, .nav-link.active { color: var(--accent-blue); }
+.nav-btn { position: absolute; right: 24px; background-color: var(--accent-blue); color: var(--white); text-decoration: none; padding: 10px 24px; border-radius: 4px; font-weight: 500; font-size: 14px; transition: var(--transition); }
+.nav-btn:hover { background-color: #004475; transform: translateY(-1px); }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 6px; position: absolute; right: 24px; }
+.mobile-toggle span { width: 24px; height: 2px; background-color: var(--primary-deep); transition: var(--transition); }
+
+/* --- Heroes & Titles --- */
+.hero-banner { background: linear-gradient(135deg, #ffffff 0%, var(--light-bg) 100%); padding: 100px 0; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+.badge { background-color: rgba(0, 91, 158, 0.1); color: var(--accent-blue); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; display: inline-block; margin-bottom: 24px; }
+.hero-content h1 { font-size: 46px; color: var(--primary-deep); line-height: 1.15; margin-bottom: 24px; font-weight: 700; }
+.hero-content p { font-size: 17px; color: var(--text-light); margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 16px; }
+.btn { padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 15px; transition: var(--transition); display: inline-block; }
+.btn-primary { background-color: var(--accent-blue); color: var(--white); }
+.btn-primary:hover { background-color: #004475; box-shadow: 0 8px 24px rgba(0, 91, 158, 0.25); }
+.btn-secondary { background-color: transparent; color: var(--primary-deep); border: 1px solid var(--border-color); }
+.btn-secondary:hover { background-color: rgba(0, 0, 0, 0.02); border-color: var(--primary-deep); }
+.hero-visual { position: relative; background: linear-gradient(45deg, var(--primary-deep), #1e293b); height: 380px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: flex; align-items: flex-end; padding: 30px; }
+.abstract-card { background-color: var(--white); padding: 24px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); width: 80%; }
+.stat-number { display: block; font-size: 36px; font-weight: 700; color: var(--accent-blue); line-height: 1; }
+.stat-label { font-size: 13px; color: var(--text-light); text-transform: uppercase; }
+
+/* --- Cinematic Internal Hero System --- */
+.internal-hero {
+    position: relative;
+    min-height: 530px; /* Grants a solid industrial height footprint */
+    display: flex;
+    align-items: center;
+    /* Loads your image asset as a beautifully centered backdrop cover */
+    background-size: cover;
+    background-position: center right; /* Anchors the image positioning focal track to the right side */
+    overflow: hidden;
+}
+
+/* Directional Left-To-Right Shade Overlay Engine
+   Protects text readability on the left while revealing raw graphics on the right 
+*/
+.hero-left-shade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Heavy solid mask near text lines tapering down smoothly to 0% opacity over the right half */
+    background: linear-gradient(
+        to right,
+        rgba(10, 25, 47, 0.92) 0%,
+        rgba(10, 25, 47, 0.75) 35%,
+        rgba(10, 25, 47, 0.4) 60%,
+        rgba(10, 25, 47, 0) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Structural Alignment Overrides */
+.internal-hero .container {
+    position: relative;
+    z-index: 2; /* Pushes content forward cleanly over the shadow layer track */
+    width: 100%;
+}
+
+.hero-content-left {
+    max-width: 550px; /* Holds typography bounds completely within the darkest zone of the shade gradient */
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #005b9e; /* Signature Brand Blue Accent */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 12px 0;
+}
+
+.hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+}
+
+.hero-underline {
+    width: 60px;
+    height: 4px;
+    background-color: #005b9e;
+    border-radius: 2px;
+}
+
+/* Responsive adjustment for small viewport tracks */
+@media (max-width: 768px) {
+    .internal-hero {
+        min-height: 320px;
+    }
+    
+    .hero-title {
+        font-size: 34px;
+    }
+    
+    /* Solidifies the tint baseline over mobile targets where screens are narrower */
+    .hero-left-shade-overlay {
+        background: rgba(10, 25, 47, 0.85);
+    }
+}
+
+/* --- Content Sections --- */
+.about-section { padding: 80px 0; }
+.section-header h2 { font-size: 32px; color: var(--primary-deep); font-weight: 700; }
+.subtitle { color: var(--text-light); font-size: 16px; margin-top: 8px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.about-main-text p { font-size: 16px; color: var(--text-main); line-height: 1.8; }
+.vision-mission-cards { display: flex; flex-direction: column; gap: 24px; }
+.vm-card { background-color: var(--white); border: 1px solid var(--border-color); padding: 32px; border-radius: 8px; position: relative; overflow: hidden; }
+.card-icon-strip { position: absolute; top: 0; left: 0; width: 4px; height: 100%; background-color: var(--primary-deep); }
+.card-icon-strip.blue-strip { background-color: var(--accent-blue); }
+.vm-card h3 { font-size: 20px; color: var(--primary-deep); margin-bottom: 12px; }
+
+/* --- Services Grid --- */
+.services-section { background-color: var(--light-bg); padding: 80px 0; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+.service-card { 
+    background-color: var(--white); 
+    border-radius: 24px; 
+    overflow: hidden;
+    box-shadow: 0 22px 60px rgba(10, 25, 47, 0.09);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(10, 25, 47, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(10, 25, 47, 0.14);
+}
+
+.service-card-media {
+    position: relative;
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+
+.service-card-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 25, 47, 0.15) 0%, rgba(10, 25, 47, 0.75) 100%);
+}
+
+
+.service-card-copy {
+    padding: 28px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.service-card h3 { 
+    font-size: 22px; 
+    color: var(--primary-deep); 
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.service-card p { 
+    color: var(--text-light); 
+    font-size: 15px; 
+    line-height: 1.8;
+    margin: 0;
+}
+
+.service-card-copy::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: linear-gradient(90deg, #005b9e, #00D4FF);
+    border-radius: 999px;
+    opacity: 0.85;
+}
+
+
+/* --- Tabs & Metrics --- */
+.why-section { padding: 80px 0; }
+.Boxed-Layout { background-color: var(--primary-deep); color: var(--white); border-radius: 12px; padding: 60px; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.why-left h2 { font-size: 32px; margin-bottom: 16px; }
+.why-left p { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+.metric-list-selectors { display: flex; flex-direction: column; gap: 12px; }
+.metric-tab { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); text-align: left; padding: 14px 20px; border-radius: 6px; cursor: pointer; font-family: var(--font-stack); font-size: 15px; transition: var(--transition); }
+.metric-tab:hover, .metric-tab.active { background-color: var(--accent-blue); color: var(--white); border-color: var(--accent-blue); }
+.why-right { background-color: rgba(255,255,255,0.04); padding: 40px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); min-height: 200px; display: flex; align-items: center; }
+.metric-content { display: none; }
+.metric-content.active { display: block; animation: fadeIn 0.4s ease; }
+.metric-content h3 { font-size: 24px; margin-bottom: 16px; color: var(--white); }
+.metric-content p { color: rgba(255,255,255,0.7); font-size: 16px; }
+
+.metric-details-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    min-height: 340px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+
+    /* --- ADDED FOR DEEPER DARKNESS --- */
+    /* 1. Creates a solid dark tint that blends directly into your background image background */
+    background-color: rgba(10, 25, 47, 0.40); /* A deep premium navy tint at 65% opacity */
+    
+    /* 2. Tells CSS to multiply the background image layers together, making shadows richer */
+    background-blend-mode: multiply;
+
+    /* 3. Smooth transition if you want to animate the darkness level on hover */
+    transition: var(--transition, all 0.4s ease);
+}
+
+.metric-details-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 25, 47, 0.3) 0%, rgba(10, 25, 47, 0.85) 100%);
+}
+
+.metric-details-content {
+    position: relative;
+    z-index: 2;
+    padding: 28px 30px 32px;
+    color: var(--white);
+    max-width: 100%;
+}
+
+.metric-image-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ECEFF4;
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.metric-details-content h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+    color: var(--white);
+}
+
+.metric-details-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .metric-details-card {
+        min-height: 260px;
+    }
+
+    .metric-details-content {
+        padding: 22px 22px 26px;
+    }
+
+    .metric-details-content h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 900px) {
+    .metric-details-card {
+        border-radius: 18px;
+    }
+
+    .metric-details-image {
+        min-height: 200px;
+    }
+
+    .metric-details-copy h3 {
+        font-size: 24px;
+    }
+}
+
+/* ==========================================================================
+   PORTFOLIO GATEWAY BRIDGE SECTION (Replaces old video block)
+   ========================================================================== */
+.portfolio-gateway-section {
+    padding: 60px 0 120px 0;
+    background-color: #F8FAFC; /* Keeps consistency with your card section backdrop */
+    width: 100%;
+}
+
+.gateway-card {
+    position: relative;
+    background-color: var(--primary-deep); /* Premium dark corporate deep tone */
+    border-radius: 16px;
+    padding: 60px 50px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(10, 25, 47, 0.12);
+}
+
+/* Subtle architectural layout mesh pattern for a premium blueprint aesthetic */
+.gateway-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gateway-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.gateway-tag {
+    display: inline-block;
+    color: var(--accent-blue);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.gateway-content h2 {
+    font-size: 32px;
+    color: var(--white);
+    font-weight: 700;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    font-family: var(--font-stack);
+}
+
+.gateway-content p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.7); /* Highly legible translucent white */
+    margin-bottom: 32px;
+    font-family: var(--font-stack);
+}
+
+/* --- High-End SaaS Interactive Link Button --- */
+.gateway-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--accent-blue); /* Solid brand signature color */
+    color: var(--white) !important;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: var(--transition, all 0.3s ease);
+}
+
+.btn-arrow {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover Interaction Mechanics */
+.gateway-btn:hover {
+    background-color: var(--white);
+    color: var(--primary-deep) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.gateway-btn:hover .btn-arrow {
+    transform: translateX(4px); /* Slick vector arrow slide animation */
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .gateway-card {
+        padding: 45px 30px;
+    }
+    .gateway-content h2 {
+        font-size: 26px;
+    }
+    .gateway-content p {
+        font-size: 14.5px;
+    }
+}
+
+/* --- Contact & Footer --- */
+/* ==========================================================================
+   EXECUTIVE SPLIT-PANEL CONTACT ARCHITECTURE (Customized)
+   ========================================================================== */
+.contact-page-wrapper {
+    background-color: #F8FAFC;
+    width: 100%;
+}
+
+/* --- Top Dark Banner --- */
+.contact-hero-banner {
+    position: relative;
+    padding: 110px 0 190px 0; /* Creates spatial pocket for card overlap */
+    background-color: #191c1d; /* Clean dark theme background */
+    background-image: url('images/buildng.png');
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+}
+
+/* Multiplied dark vector overlay using your slate hex */
+.hero-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 28, 29, 0.85);
+    background-blend-mode: multiply;
+    z-index: 1;
+}
+
+.hero-banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-pretitle {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-family: var(--font-stack);
+}
+
+.hero-banner-content h1 {
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+    font-family: var(--font-stack);
+}
+
+.hero-banner-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* --- Floating Dashboard Component Overlap --- */
+.contact-form-section {
+    padding: 0 0 120px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.split-contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: -100px; /* Pulls container into the dark hero banner frame */
+    box-shadow: 0 30px 70px rgba(25, 28, 29, 0.12);
+}
+
+/* --- Left Sidebar Component (Dark Matte Architecture) --- */
+.card-sidebar-dark {
+    background-color: #0a192f; /* Your custom premium dark background */
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sidebar-intro {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 32px 0;
+    font-family: var(--font-stack);
+}
+
+.sidebar-meta-block {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-block-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.sidebar-meta-block strong {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--white);
+    font-family: var(--font-stack);
+}
+
+/* --- Right Side Input Engine Layout --- */
+.card-inputs-light {
+    padding: 50px 60px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.structured-form {
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.form-field-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 8px;
+    font-family: var(--font-stack);
+}
+
+/* Icon Integrated Input Group Frames */
+.input-with-icon, .textarea-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon svg, .textarea-with-icon svg {
+    position: absolute;
+    left: 18px;
+    color: #94A3B8;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.textarea-with-icon svg {
+    top: 18px; /* Anchor icon cleanly at the top of the message box */
+}
+
+.input-with-icon input, 
+.textarea-with-icon textarea {
+    width: 100%;
+    padding: 14px 18px 14px 48px;
+    border: 1px solid #E2E8F0;
+    background-color: var(--white);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #191c1d;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--font-stack);
+    resize: none;
+}
+
+/* Input Focus Glow mechanics matching deep blue theme */
+.input-with-icon input:focus,
+.textarea-with-icon textarea:focus {
+    border-color: #002542; /* Deep Navy corporate button color */
+    box-shadow: 0 0 0 4px rgba(0, 37, 66, 0.08);
+}
+
+.input-with-icon input:focus + svg,
+.textarea-with-icon textarea:focus + svg {
+    color: #002542;
+}
+
+/* --- Right-Aligned Minimal Button Set --- */
+.form-action-row {
+    display: flex;
+    justify-content: flex-end; /* Aligns button to the right */
+    width: 100%;
+    margin-top: 12px;
+}
+
+.consultation-submit-action-btn {
+    background-color: #002542; /* Premium Deep Navy theme */
+    color: var(--white);
+    border: none;
+    padding: 16px 36px; /* Constrained padding instead of full width block */
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.consultation-submit-action-btn:hover {
+    background-color: #00182C;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 37, 66, 0.15);
+}
+
+.consultation-submit-action-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Responsive Breakpoint Mechanics --- */
+@media (max-width: 992px) {
+    .split-contact-card {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .card-inputs-light {
+        padding: 40px;
+    }
+    .form-action-row {
+        justify-content: transform; /* Let button fill width on mobile scales safely */
+    }
+    .consultation-submit-action-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-banner-content h1 {
+        font-size: 34px;
+    }
+    .card-sidebar-dark {
+        padding: 35px 24px;
+    }
+    .card-inputs-light {
+        padding: 35px 24px;
+    }
+}
+
+.global-footer { background-color: var(--primary-deep); color: rgba(255,255,255,0.5); padding: 40px 0; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.footer-logo { display: flex; justify-content: center; }
+.footer-logo-img { height: 80px; width: auto; }
+.footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+.footer-bottom p { margin: 0; }
+.footer-legal { display: flex; justify-content: center; gap: 24px; }
+.footer-legal a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-legal a:hover { color: var(--white); }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 91, 158, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(0, 91, 158, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 91, 158, 0); } }
+
+@media (max-width: 992px) {
+    .hero-grid, .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { height: 300px; }
+    .mobile-toggle { display: flex; }
+    .nav-menu { position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--white); flex-direction: column; padding: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); display: none; }
+    .nav-menu.active { display: flex; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+}
+/* --- Hero Dynamic Banner Slider Style Block --- */
+.hero-banner-slider {
+    position: relative;
+    height: 620px; /* Optimal desktop height */
+    overflow: hidden;
+    background-color: var(--primary-deep);
+}
+
+.slider-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.slide-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: transform 6s ease-out;
+    z-index: -1;
+}
+
+.hero-slide.active .slide-bg-overlay {
+    transform: scale(1);
+}
+
+.hero-slider-content {
+    color: var(--white);
+    max-width: 680px;
+    z-index: 5;
+    transform: translateY(20px);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-slide.active .hero-slider-content {
+    transform: translateY(0);
+}
+
+.hero-slider-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-slider-content p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 36px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Secondary Light Action Button Variant */
+.btn-secondary-light {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+}
+
+/* --- Navigation Dot Mechanics --- */
+.slider-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.controls-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 32px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dot.active {
+    background-color: var(--accent-blue);
+    width: 48px; /* Elongated layout highlight */
+}
+
+/* Arrow Navigation Buttons */
+.arrow-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.arrow-left {
+    margin-right: auto;
+}
+
+.arrow-right {
+    margin-left: auto;
+}
+
+.arrow-left .circle-bg {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.arrow-left:hover .circle-bg {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(0, 91, 158, 0.5);
+}
+
+.arrow-right .circle-bg {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.arrow-right:hover .circle-bg {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(0, 91, 158, 0.5);
+}
+
+.arrow-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.arrow-btn:hover .arrow-icon {
+    color: var(--accent-blue);
+}
+
+@media (max-width: 768px) {
+    .hero-banner-slider { height: 500px; }
+    .hero-slider-content h1 { font-size: 32px; }
+    .hero-slider-content p { font-size: 15px; }
+}
+
+/* --- NEW SECTIONS STYLING --- */
+
+/* Section Headers */
+/* ==========================================================================
+   INDUSTRIAL MILESTONES & TRUST MARQUEE
+   ========================================================================== */
+
+.about-preview-section {
+    padding: 120px 0;
+    background-color: var(--white);
+    width: 100%;
+    overflow: hidden;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Updated Header Label (Modern Square Block Layout) */
+.section-label {
+    display: inline-block;
+    background-color: var(--light-bg);
+    color: var(--accent-blue);
+    padding: 6px 14px;
+    border-radius: 4px; /* Clean architectural corner instead of 50px capsule */
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    font-family: var(--font-stack);
+}
+
+.section-header {
+    margin-bottom: 64px;
+}
+
+.section-header h2 {
+    font-size: 38px;
+    color: var(--primary-deep);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-family: var(--font-stack);
+}
+
+/* Sharp Metric Box Matrix Grid */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.highlight-item {
+    background-color: var(--white);
+    padding: 40px 32px;
+    border-radius: 18px;
+    text-align: left; /* Aligns content in a clean structural box format */
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.highlight-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(97, 97, 255, 0.14), rgba(97, 97, 255, 0.04));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    font-size: 24px;
+    box-shadow: 0 18px 40px rgba(97, 97, 255, 0.08);
+}
+
+.highlight-icon i {
+    line-height: 1;
+}
+
+/* High-end decorative accent stripe */
+.metric-accent-stripe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--border-color);
+    transition: var(--transition);
+}
+
+.metric-big {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--primary-deep);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    font-family: var(--font-stack);
+}
+
+.highlight-item h3 {
+    font-size: 20px;
+    color: var(--primary-deep);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    font-family: var(--font-stack);
+}
+
+/* Hover States */
+.highlight-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 91, 158, 0.2);
+    box-shadow: 0 15px 35px rgba(10, 25, 47, 0.04);
+}
+
+.highlight-item:hover .metric-accent-stripe {
+    background-color: var(--accent-blue);
+}
+
+/* Infinite Logo Marquee Ribbon System */
+.marquee-trust-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    opacity: 0.7;
+    font-family: var(--font-stack);
+}
+
+.logo-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.logo-marquee-wrapper::before,
+.logo-marquee-wrapper::after {
+    content: "";
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--white) 0%, transparent 100%);
+}
+
+.logo-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--white) 0%, transparent 100%);
+}
+
+.logo-marquee-track {
+    display: flex;
+    width: calc(200px * 12); 
+    animation: infiniteLogoScroll 25s linear infinite;
+}
+
+.logo-slide {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.logo-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(50%);
+    transition: var(--transition);
+}
+
+.logo-slide img:hover {
+    filter: grayscale(0%) opacity(90%);
+}
+
+@keyframes infiniteLogoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 6)); }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 { font-size: 32px; }
+    .logo-marquee-wrapper::before, .logo-marquee-wrapper::after { width: 60px; }
+    .logo-slide { width: 150px; padding: 0 15px; }
+    .logo-marquee-track { width: calc(150px * 12); }
+    @keyframes infiniteLogoScroll {
+        100% { transform: translateX(calc(-150px * 6)); }
+    }
+}
+
+/* About Preview Section */
+/* --- Core Internal About Us Structural System --- */
+.about-section {
+    padding: 120px 0;
+    background-color: var(--white);
+}
+
+.about-split-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Typography Enhancements */
+.about-main-text h2 {
+    font-size: 38px;
+    color: var(--primary-deep);
+    font-weight: 700;
+    margin: 12px 0 24px 0;
+    line-height: 1.2;
+}
+
+.about-main-text p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* Inline Check Specs Layout */
+.about-inline-specs {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.spec-inline-item {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #2c3e50; /* Brand Core Purple-Blue Accent */
+    background-color: #F0F3FF; /* Premium soft canvas tracking background */
+    padding: 6px 16px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+}
+
+/* --- Layered Offset Image Canvas Engine (Updated with EST. 1998 Block) --- */
+.about-graphic-canvas {
+    position: relative;
+    width: 100%;
+    height: 480px;
+}
+
+.main-industrial-frame {
+    width: 85%;
+    height: 450px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(10, 25, 47, 0.059);
+}
+
+/* 
+   We keep your exact original positioning classes intact, 
+   but turn the container into a smaller solid dark blue badge box
+*/
+.offset-blueprint-frame {
+    width: 130px;                  /* Hardcoded small square layout width */
+    height: 130px;                 /* Hardcoded small layout height */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    overflow: hidden;
+    background-color: var(--primary-deep); /* Uses your website's dark navy theme */
+    border: 6px var(--white) solid; /* Retains clean architectural spacing separation */
+    box-shadow: 0 15px 35px rgba(10, 25, 47, 0.15);
+    
+    /* Perfect flex centering alignment for text layout frames */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hides the old 2nd image safely without editing the HTML file structure */
+.offset-blueprint-frame .about-panel-img-sub {
+    display: none;
+}
+
+/* 
+   Using standard CSS pseudo-elements to perfectly inject the text 
+   into the block dynamically without breaking layout grids
+*/
+.offset-blueprint-frame::before {
+    content: "EST.";
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5); /* Crisp, slightly translucent white */
+    margin-bottom: 2px;
+    font-family: var(--font-stack);
+}
+
+.offset-blueprint-frame::after {
+    content: "1998";
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    font-family: var(--font-stack);
+}
+
+/* Keeps your main frame image styling performing smoothly */
+.about-panel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+/* Interaction zoom state rules for heavy imaging modules */
+.about-graphic-canvas:hover .about-panel-img {
+    transform: scale(1.04);
+}
+
+/* --- Strategic Focus Section Header Architecture --- */
+.strategic-focus-section {
+    padding: 100px 0 130px 0;
+    background-color: #F8FAFC; /* Clean premium grey backdrop canvas */
+}
+
+.strategic-focus-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+}
+
+.focus-pre-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #005b9e; /* Main signature accent blue */
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.strategic-focus-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-deep);
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.strategic-focus-header p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* --- High-End Refined Cards Framework Grid --- */
+.vision-mission-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.vm-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px; /* Smooth professional bounding corners instead of cut clipping */
+    padding: 50px 40px;
+    position: relative;
+    overflow: hidden; /* Binds our premium accent line inside the frame */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Top-Right Technical Background Blueprint Controls */
+    background-repeat: no-repeat;
+    background-position: right 30px top 35px;
+    background-size: 70px;
+}
+
+/* 
+   Premium Opulent Indicator Line: 
+   Sits flat invisibly at the top edge, and animates forward beautifully on hover 
+*/
+.vm-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #005b9e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Interactive Hover States */
+.vm-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(97, 97, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(97, 97, 255, 0.05), 0 1px 3px rgba(10, 25, 47, 0.02);
+}
+
+.vm-card:hover::before {
+    transform: scaleX(1); /* Activates the sleek brand top accent bar smoothly */
+}
+
+.card-inner-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.vm-step-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #005b9e;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.vm-card h3 {
+    font-size: 22px;
+    color: var(--primary-deep);
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    max-width: 75%; /* Maintains spatial margin separation around background vector graphics */
+    letter-spacing: -0.3px;
+}
+
+.vm-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* --- Micro Vector Technical Graphics Custom Injector --- */
+
+/* Card 1: Checklist Lines */
+.card-mission {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 30 h60 M20 50 h60 M20 70 h40' stroke='%236161FF' stroke-width='3.5' stroke-opacity='0.15' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+}
+.card-mission:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 30 h60 M20 50 h60 M20 70 h40' stroke='%236161FF' stroke-width='3.5' stroke-opacity='0.35' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Card 2: Blueprint Hex Cube */
+.card-vision {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z M20 35 L50 50 L80 35 M50 50 L50 80' stroke='%236161FF' stroke-width='3' stroke-opacity='0.15' fill='none'/%3E%3C/svg%3E");
+}
+.card-vision:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z M20 35 L50 50 L80 35 M50 50 L50 80' stroke='%236161FF' stroke-width='3' stroke-opacity='0.35' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Card 3: Calibration Metrics */
+.card-values {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='28' stroke='%236161FF' stroke-width='3' stroke-opacity='0.15' fill='none'/%3E%3Cpath d='M50 15 L50 85 M15 50 L85 50' stroke='%236161FF' stroke-width='2' stroke-opacity='0.1'/%3E%3C/svg%3E");
+}
+.card-values:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='28' stroke='%236161FF' stroke-width='3' stroke-opacity='0.35' fill='none'/%3E%3Cpath d='M50 15 L50 85 M15 50 L85 50' stroke='%236161FF' stroke-width='2' stroke-opacity='0.25'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   SERVICES PREVIEW SECTION (PERFECTLY ALIGNED TEXT ENGINE)
+   ========================================================================== */
+.services-preview-section {
+    padding: 100px 0;
+    background-color: #F8FAFC;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+/* Master 3D Perspective Sandbox Frame */
+.services-grid .flip-step {
+    background-color: transparent;
+    height: 380px; 
+    perspective: 1200px;
+}
+
+/* Structural asset that handles the 180-degree flip animation */
+.services-grid .flip-step-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+}
+
+/* Action transition triggers on core card wrapper hover */
+.services-grid .flip-step:hover .flip-step-inner {
+    transform: rotateY(180deg);
+}
+
+/* Shared Core Sheet Alignment settings for Front and Back */
+.services-grid .flip-step-front, 
+.services-grid .flip-step-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Fixes browser mirroring leaks */
+    backface-visibility: hidden; 
+    border-radius: 12px;
+    padding: 40px 30px; /* Generous internal padding for breathing room */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(25, 28, 29, 0.06);
+    box-sizing: border-box; /* Ensures padding doesn't break the height/width bounds */
+}
+
+/* --- Front Face Structural Parameters (Image + Dark Overlay) --- */
+.services-grid .flip-step-front {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transform: rotateY(0deg);
+}
+
+/* The dark mask covering the front face image */
+.services-grid .service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 28, 29, 0.65); /* Elegant dark shade mask tint */
+    z-index: 1;
+    border-radius: 12px;
+}
+
+.services-grid .flip-step-front h4 {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.4;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Back Face Structural Parameters (Flat Solid Dark Palette) --- */
+.services-grid .flip-step-back {
+    background: #191c1d; /* Solid industrial flat matte dark color theme */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    transform: rotateY(180deg); /* Pre-flipped to lock cleanly out of sight */
+}
+
+/* Highly optimized back face description text alignment */
+.services-grid .flip-step-back p {
+    font-size: 15px;               /* Sized up slightly for ultra-crisp readability */
+    line-height: 1.7;              /* Relaxed line height to prevent text crowding */
+    color: rgba(255, 255, 255, 0.9); /* High contrast off-white */
+    margin: 0;
+    text-align: center;            /* Balanced optical alignment */
+    max-width: 90%;                /* Prevents lines from kissing the container borders */
+    word-break: break-word;        /* Clean structural wrapping breaks */
+}
+/* Why Choose Section */
+.why-choose-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-deep) 0%, rgba(10, 25, 47, 0.95) 100%);
+    color: var(--white);
+}
+
+.why-choose-section .section-label,
+.why-choose-section .section-header h2,
+.why-choose-section .section-description {
+    color: var(--white);
+}
+
+.why-choose-section .section-label {
+    background-color: rgba(0, 91, 158, 0.2);
+    border-color: rgba(0, 91, 158, 0.4);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.why-choose-section .section-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.point-icon {
+    font-size: 24px;
+    color: var(--accent-blue);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.point-item h4 {
+    font-size: 18px;
+    color: var(--white);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Industries Section */
+.industries-section {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 50px;
+}
+
+.industry-item {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 280px;
+}
+
+.industry-image {
+    width: 100%;
+    height: 65%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.industry-text {
+    width: 100%;
+    height: 35%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-deep);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.industry-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 91, 158, 0.15);
+    transform: translateY(-4px);
+}
+
+.industry-item:hover .industry-image {
+    filter: brightness(0.85);
+}
+
+/* Process Section */
+/* --- Isometric Engineering Shield Process Track --- */
+.process-section {
+    padding: 100px 0;
+    background-color: #F4F7FA; /* Premium industrial background depth tint */
+}
+
+.process-geometry-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px 24px;
+    margin-top: 60px;
+}
+
+/* 
+   Angled Hex-Shield Geometry Card
+   Uses polygon coordinates to cut away corners for an advanced architectural shape
+*/
+.geo-step-card {
+    background-color: var(--white);
+    position: relative;
+    /* Cuts the upper left and lower right corners at sharp architectural 30px angles */
+    clip-path: polygon(30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0% 100%, 0% 30px);
+    padding: 45px 32px;
+    min-height: 250px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Global Vector Alignment Settings */
+    background-repeat: no-repeat;
+    background-position: right 25px top 20px;
+    background-size: 65px;
+}
+
+/* Interactive lift and accent pop on hover */
+.geo-step-card:hover {
+    transform: translateY(-6px);
+    background-color: #F9FBFF; /* Shifts to an ultra-light clean blue hue */
+}
+
+/* Structural Internal Content Framework */
+.geo-card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.geo-card-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: rgba(0, 91, 158, 0.12); /* Large, high-end ghost numbering style */
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    transition: color 0.3s ease;
+}
+
+.geo-step-card:hover .geo-card-num {
+    color: var(--accent-blue); /* Highlights number fully when user hovers */
+}
+
+.geo-step-card h4 {
+    font-size: 17px;
+    color: var(--primary-deep);
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 75%; /* Gives breathing room for the top-right illustration */
+}
+
+.geo-step-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* --- Integrated Step-by-Step Connector Arrows --- */
+@media (min-width: 992px) {
+    .geo-step-card:not(:last-child)::after {
+        content: '→';
+        position: absolute;
+        bottom: 25px;
+        right: 15px;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent-blue);
+        opacity: 0.4;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 5;
+    }
+
+    .geo-step-card:hover::after {
+        opacity: 1;
+        transform: translateX(5px); /* Animated forward nudge */
+    }
+}
+
+/* --- Clean High-Visibility Vector Illustrations (Top-Right Placed) --- */
+
+.step-consultation {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 30 h60 M20 50 h60 M20 70 h40' stroke='%23005B9E' stroke-width='3.5' stroke-opacity='0.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+}
+.step-consultation:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 30 h60 M20 50 h60 M20 70 h40' stroke='%23005B9E' stroke-width='3.5' stroke-opacity='0.45' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+}
+
+.step-design {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z M20 35 L50 50 L80 35 M50 50 L50 80' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.2' fill='none'/%3E%3C/svg%3E");
+}
+.step-design:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z M20 35 L50 50 L80 35 M50 50 L50 80' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.45' fill='none'/%3E%3C/svg%3E");
+}
+
+.step-fabrication {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='25' stroke='%23005B9E' stroke-width='3.5' stroke-opacity='0.2' fill='none'/%3E%3Ccircle cx='50' cy='50' r='10' stroke='%23005B9E' stroke-width='2.5' stroke-opacity='0.2' fill='none'/%3E%3C/svg%3E");
+}
+.step-fabrication:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='25' stroke='%23005B9E' stroke-width='3.5' stroke-opacity='0.45' fill='none'/%3E%3Ccircle cx='50' cy='50' r='10' stroke='%23005B9E' stroke-width='2.5' stroke-opacity='0.45' fill='none'/%3E%3C/svg%3E");
+}
+
+.step-installation {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 80 L50 20 L90 80 Z M50 20 L50 80 M10 80 L50 50 L90 80' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.2' fill='none'/%3E%3C/svg%3E");
+}
+.step-installation:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 80 L50 20 L90 80 Z M50 20 L50 80 M10 80 L50 50 L90 80' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.45' fill='none'/%3E%3C/svg%3E");
+}
+
+.step-quality {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.2' fill='none'/%3E%3Cpath d='M50 10 L50 90 M10 50 L90 50' stroke='%23005B9E' stroke-width='2' stroke-opacity='0.15'/%3E%3C/svg%3E");
+}
+.step-quality:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.45' fill='none'/%3E%3Cpath d='M50 10 L50 90 M10 50 L90 50' stroke='%23005B9E' stroke-width='2' stroke-opacity='0.3'/%3E%3C/svg%3E");
+}
+
+.step-handover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 20 L80 80 M80 20 L20 80' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23FFFFFF' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.2'/%3E%3C/svg%3E");
+}
+.step-handover:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 20 L80 80 M80 20 L20 80' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.45'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23FFFFFF' stroke='%23005B9E' stroke-width='3' stroke-opacity='0.45'/%3E%3C/svg%3E");
+}
+
+/* Project Section */
+/* Project Section base styling */
+.project-section {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+    overflow: hidden; /* Encapsulates the infinite marquee slider gracefully */
+}
+
+.project-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+    margin-bottom: 60px; /* Separates the toggle system from the dynamic tracks */
+}
+
+.category-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-main);
+    transition: var(--transition);
+    font-family: var(--font-stack);
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border-color: var(--accent-blue);
+}
+
+/* --- Infinite Dynamic Marquee Display Engine --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    /* Soft lateral vignette shades to elegantly fade images out at edges */
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content; /* Guarantees layout wraps contents infinitely */
+    gap: 28px;
+    animation: continuousScroll 35s linear infinite;
+    will-change: transform;
+}
+
+/* 
+   Smooth Interaction Pause Handling
+   Using dynamic states to cleanly stop the carousel timeline layout on hover 
+*/
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Linear infinite layout shifting function mapping */
+@keyframes continuousScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        /* Loops halfway down the track length (exactly where the duplicates start) */
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* 
+   Architectural Geometrical Project Showcase Cards 
+   Complements the Process section shield angles 
+*/
+.project-marquee-card {
+    width: 320px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    /* Lower-right card corner matches process workflow shapes */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-marquee-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 12px 30px rgba(0, 91, 158, 0.08);
+}
+
+/* Framed Image System with Subtle Scaling Effects */
+.project-img-wrapper {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-marquee-card:hover .project-img-wrapper img {
+    transform: scale(1.05); /* Soft technical zoom scale */
+}
+
+/* Integrated Custom Isometric Top-Right Card Badges */
+.project-geo-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-blue);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    /* Inverted polygon cuts for precise structural fitting */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%);
+    text-transform: uppercase;
+}
+
+/* Structural Internal Card Text Elements */
+.project-card-content {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-card-content h4 {
+    font-size: 16px;
+    color: var(--primary-deep);
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.project-card-content p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    padding: 100px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: block;
+    font-weight: 600;
+    color: var(--accent-blue);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, rgba(0, 91, 158, 0.8) 100%);
+    padding: 80px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.cta-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Enhanced Footer */
+/* --- Premium Corporate Footer System --- */
+.global-footer {
+    background-color: #0A192F; /* Deep premium blue workspace canvas background */
+    padding: 80px 0 30px 0;
+    border-top: 2px solid #F0F3FF; /* Clean light accent divider border */
+    font-family: var(--font-stack);
+}
+
+/* 4-Column Asymmetrical Grid Layout Engine */
+.footer-main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.25fr; /* Grants more breathing room for company description and contact specs */
+    gap: 50px 30px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(240, 243, 245, 0.08); /* Clean, subtle separation line */
+}
+
+/* Brand Column Element Formatting */
+.footer-brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-logo-img {
+    height: 100px; 
+    width: auto;
+    object-fit: contain;
+    margin-left: -130px; /* Pulls the logo further left past the text line nudge */
+    position: relative; /* Ensures perfect layout parsing */
+}
+
+.brand-description {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 90%;
+}
+
+/* Standard Link Column Aesthetic Layouts */
+.footer-col h5 {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+/* Optional premium design touch: small underline marker below subheaders */
+.footer-col h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 20px;
+    height: 2px;
+    background-color: #005b9e; /* Clean brand blue accent trigger */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col ul li {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Active Highlight Interactions changing into crisp premium light blues */
+.footer-col a:hover {
+    color: #005b9e;
+    transform: translateX(3px); /* Smooth subtle rightward step on hover */
+    display: inline-block;
+}
+
+/* Technical Specification Metadata Block Configurations */
+.contact-meta-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.meta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.meta-value {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+}
+
+.meta-value a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Bottom Legal Footnote Runway Section --- */
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom-bar p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #005b9e;
+}
+
+.legal-divider {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 12px;
+    user-select: none;
+}
+
+/* --- Optimized Responsive Responsive Grid Braking Adjustments --- */
+@media (max-width: 992px) {
+    .footer-main-grid {
+        grid-template-columns: 1fr 1fr; /* Responsive break down to elegant pairs on tablets */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-main-grid {
+        grid-template-columns: 1fr; /* Clean stacked vertical presentation on micro smart layouts */
+        gap: 35px;
+    }
+    
+    .footer-bottom-bar {
+        flex-direction: column-reverse; /* Places copyright notices below structural quick terms paths */
+        align-items: flex-start;
+    }
+    
+    .brand-description {
+        max-width: 100%;
+    }
+}
+
+/* --- Snackbar Notification Styles --- */
+.snackbar {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #4caf50; /* Green for success */
+    color: var(--white);
+    padding: 16px 24px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(120px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    max-width: 350px;
+    word-wrap: break-word;
+}
+
+.snackbar.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.snackbar.error {
+    background-color: #f44336; /* Red for error */
+}
+
+/* Mobile snackbar positioning */
+@media (max-width: 768px) {
+    .snackbar {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        max-width: none;
+    }
+}
